@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "turtle_game/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "turtle_game"
+  spec.name          = "turtle_in_the_sand"
   spec.license       = "MIT"
   spec.version       = TurtleGame::VERSION
   spec.authors       = ["Daniel Steele"]
