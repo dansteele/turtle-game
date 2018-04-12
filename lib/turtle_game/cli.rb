@@ -17,5 +17,17 @@ module TurtleGame
       puts "v#{TurtleGame::VERSION}"
     end
     map %w(--version -v) => :version
+
+    desc 'turtle [WIDTH]', 'Start the game with an optional board width modifier'
+    method_option :help, aliases: '-h', type: :boolean,
+                         desc: 'Display usage information'
+    def turtle(width = nil)
+      if options[:help]
+        invoke :help, ['turtle']
+      else
+        require_relative 'commands/turtle'
+        TurtleGame::Commands::Turtle.new(width, options).execute
+      end
+    end
   end
 end
